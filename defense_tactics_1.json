@@ -1,0 +1,30 @@
+{
+  "buildable_units" : {
+    "_comment" : "Available Units for Purchase",
+    "units" : [
+      "Test"
+    ]
+  },
+  "units1" : {
+    "_comment" : "Player 1 / Bottom Board / Human",
+
+    "units" : [
+      "Wall",
+      "Forcefield",
+      "Engineer",
+
+      "Tarsier"
+    ]
+  },
+  "units2" : {
+    "_comment" : "Player 2 / Top Board / CPU",
+
+    "units" : [
+      "Tarsier",
+      "Tarsier",
+      "Tarsier",
+      "Tarsier",
+      "Tarsier"
+    ]
+  }
+}

@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\BoardState.cpp" />
     <ClCompile Include="..\..\..\collimator.cpp" />
     <ClCompile Include="..\..\..\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -153,6 +154,7 @@
     <ClCompile Include="..\..\..\Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\BoardState.hpp" />
     <ClInclude Include="..\..\..\stdafx.h" />
     <ClInclude Include="..\..\..\targetver.h" />
     <ClInclude Include="..\..\..\Unit.hpp" />

@@ -2,16 +2,20 @@
 #include "Unit.hpp"
 
 std::unordered_map<std::string, Unit> Unit::msUnits;
+uint64_t Unit::msIdCounter = 0;
 
 Unit::Unit() {
 }
 
-Unit Unit::GetFromName(std::string name) {
+Unit Unit::CreateFromName(std::string name) {
   auto unit = msUnits.find(name);
   if (unit == msUnits.end()) {
     throw std::exception(("could not find unit of name: " + name).c_str());
   }
-  return unit->second;
+
+  auto new_unit = unit->second;
+  new_unit.id = ++msIdCounter;
+  return new_unit;
 }
 
 void Unit::RegisterUnit(const boost::property_tree::ptree& data) {
@@ -19,10 +23,13 @@ void Unit::RegisterUnit(const boost::property_tree::ptree& data) {
 
   Unit& unit = msUnits[name];
 
-  if (name.length() >= 16)
+  const size_t name_size = sizeof(unit.name)/sizeof(char);
+  if (name.length() >= name_size)
     throw std::exception("name too long");
+  ::memset(unit.name, 0, name_size);
   strcpy(unit.name, name.c_str());
 
+  unit.id = 0;
   unit.hp = data.get<int>("hp");
   unit.fragile = data.get<bool>("fragile");
   unit.attack = data.get<int>("attack");
