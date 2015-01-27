@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 
     LoadUnits();
 
-    auto state = BoardState(args[1]);
+    auto initial_state = BoardState(args[1]);
 
 	return 0;
 }

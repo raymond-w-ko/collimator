@@ -16,4 +16,5 @@ class Unit {
   int hp;
   int attack;
   bool fragile;
+  bool can_block;
 };

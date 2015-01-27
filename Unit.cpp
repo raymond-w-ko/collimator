@@ -32,5 +32,6 @@ void Unit::RegisterUnit(const boost::property_tree::ptree& data) {
   unit.id = 0;
   unit.hp = data.get<int>("hp");
   unit.fragile = data.get<bool>("fragile");
+  unit.can_block = data.get<bool>("can_block");
   unit.attack = data.get<int>("attack");
 }
