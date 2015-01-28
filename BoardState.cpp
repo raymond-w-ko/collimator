@@ -3,6 +3,10 @@
 #include "BoardState.hpp"
 
 BoardState::BoardState(std::string filename) {
+  mParent = nullptr;
+  mPhase = kPhasePlayer1Build;
+  mPendingAttack = 0;
+
 	using boost::property_tree::ptree;
 	ptree pt;
   read_json(filename, pt);
@@ -25,4 +29,14 @@ BoardState::BoardState(std::string filename) {
     auto unit = Unit::CreateFromName(unit_name);
     mUnits2.push_back(unit);
   }
+}
+
+BoardState* BoardState::CreateChildClone() {
+  BoardState* state = new BoardState(*this);
+  state->mParent = this;
+  return state;
+}
+
+void BoardState::IncrementPhase() {
+  mPhase = (Phase)((mPhase + 1) % kNumPhases);
 }

@@ -25,3 +25,14 @@
 #include <boost/thread.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
+
+#include "Logger.hpp"
+
+void print(std::string msg) {
+  Logger::Log(msg);
+}
+
+class Action;
+class BoardState;
+typedef std::pair<Action*, BoardState*> ActionStatePair;
+typedef std::vector<ActionStatePair> ActionStatePairVector;

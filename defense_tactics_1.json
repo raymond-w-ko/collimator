@@ -2,7 +2,6 @@
   "buildable_units" : {
     "_comment" : "Available Units for Purchase",
     "units" : [
-      "Test"
     ]
   },
   "units1" : {
