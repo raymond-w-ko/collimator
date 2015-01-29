@@ -9,8 +9,8 @@ class Unit {
 
   uint64_t id;
   char name[16];
-  int hp;
-  int attack;
+  uint8_t hp;
+  uint8_t attack;
   bool fragile;
   bool can_block;
 

@@ -20,3 +20,4 @@ class AttackCountAction : public Action {
   virtual ~AttackCountAction();
   virtual BoardState* ApplyTo(BoardState* state);
 };
+

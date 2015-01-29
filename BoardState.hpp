@@ -33,7 +33,9 @@ class BoardState {
 
   const BoardState* mParent;
   Phase mPhase;
-  int mPendingAttack;
+  int8_t mPendingAttack;
+  int8_t mPendingDefense;
+  int8_t mPendingBreachDamage;
   std::vector<std::string>* mBuildableUnits;
   std::vector<Unit> mUnits1;
   std::vector<Unit> mUnits2;

@@ -27,7 +27,7 @@ void Unit::RegisterUnit(const boost::property_tree::ptree& data) {
   if (name.length() >= name_size)
     throw std::exception("name too long");
   ::memset(unit.name, 0, name_size);
-  strcpy(unit.name, name.c_str());
+  ::strcpy(unit.name, name.c_str());
 
   unit.id = 0;
   unit.hp = data.get<int>("hp");

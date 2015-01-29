@@ -6,6 +6,8 @@ BoardState::BoardState(std::string filename) {
   mParent = nullptr;
   mPhase = kPhasePlayer1Build;
   mPendingAttack = 0;
+  mPendingDefense = 0;
+  mPendingBreachDamage = 0;
 
 	using boost::property_tree::ptree;
 	ptree pt;
